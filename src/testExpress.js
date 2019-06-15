@@ -94,10 +94,7 @@ app.delete('/delete/country', function (req, res) {
     });
 });
 app.put('/countries/edit', function (req, res) {
-    res.send({
-       updated: req.body
-
-    });
+    res.send("I am tired man, I think I will edit this country nameOfCountryTOEdit later.");
 });
 
 app.listen(3000);

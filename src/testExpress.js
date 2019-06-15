@@ -68,27 +68,36 @@ app.get('/countries', function (req,res){
 
 });
 app.post('/country/provinces', function(req,res){
-    var provinces = new provinces(req.body);
-    provinces.save();
-    // then(function(province){
-    //     res.send(province)
-    // });   
-});
+   console.log(req.body);
+   res.send({
+       added: req.body
+   });
+    
+
 app.post('/countries', function (req, res) {
     console.log(req.body);
     res.send({
-        name: req.body
+        added: req.body
     });
 });
 
 app.delete('/delete/provinces', function (req, res) {
-    res.send({});
+    res.send({
+        deleted: req.body
+
+    });
 });
 app.delete('/delete/country', function (req, res) {
-    res.send({});
+    res.send({
+        deleted: req.body
+
+    });
 });
 app.put('/countries/edit', function (req, res) {
-    res.send({});
+    res.send({
+       updated: req.body
+
+    });
 });
 
 app.listen(3000);
